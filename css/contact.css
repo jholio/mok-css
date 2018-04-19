@@ -3,11 +3,24 @@ body {
 	padding: 0;
 }
 
-#background {
+.left, .right {
 	position: fixed;
-	z-index: -1;
-	object-fit: cover;
-	opacity: 0.02;
+	background-color: yellow;
+	z-index: 3;
+}
+
+.left {
+	width: 10px;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.right {
+	width: 10px;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 .whole {
@@ -19,63 +32,12 @@ body {
 	z-index: 1;
 }
 
-/* logo */
-
-#title {
-	text-align: center;
-	position: fixed;
-	background: white;
-	width: 250px;
-	padding: 0;
-	margin-top: 50px;
-	left: 50%;
-	margin-left: -125px;
-	border-style: solid;
-	border-color: #000;
-	border-width: 7px;
-	z-index: 2;
-	transition: 300ms ease;
-}
-
-#kicker {
-	display: block;
-	text-align: center;
-	position: fixed;
-	width: 250px;
-	padding: 0;
-	margin-top: 125px;
-	left: 50%;
-	margin-left: -125px;
-	z-index: 2;
-	transition: 300ms ease;
-}
-
 /* content */
 
-h1 {
-	display: inline-block;
-	font-family: futura, sans-serif;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 35px;
-	letter-spacing: 5px;
-	margin: 0;
-	padding: 7px 5px 7px 5px;
-}
-
-h2 {
-	display: inline-block;
-	font-family: futura, sans-serif;
-	text-transform: uppercase;
-	font-weight: normal;
-	font-size: 14px;
-	letter-spacing: 5px;
-	margin: 0;
-	padding: 0px 0px 0px 15px; 
-}
-
 .content {
-	padding-top: 150px; 
+	margin-top: -10px;
+	padding-top: 0; 
+	padding-left: 200px; 
 	transition: 300ms ease;
 }
 
@@ -91,6 +53,8 @@ form {
 	font-weight: normal;
 	font-size: 25px;
 	margin: 25px;
+	padding-top: 10px;
+	margin-bottom: 50px;
 	letter-spacing: 5px;
 	text-align: center;
 	grid-column: 1 / 5;
@@ -120,9 +84,19 @@ form button:hover {
 @media screen and (max-width: 736px) {
 	form {
 	display: grid;
+	margin: 0;
+	padding: 0;
  	grid-template-columns: 1fr 200px 200px 1fr;	
  	grid-gap: 10px;
 	} 
+
+	.content {
+	margin-top: -10px;
+	padding-top: 0; 
+	padding-left: 0; 
+	margin-right: -10px;
+	transition: 300ms ease;
+}
 }
 
 .footer {
@@ -137,6 +111,7 @@ form button:hover {
 	margin: 0;
 	padding-top: 200px;
 	padding-bottom: 15px;
+	padding-left: 175px;
 	opacity: 0.5;
 	text-align: center;
 }
@@ -144,6 +119,7 @@ form button:hover {
 /* menu */
 
 .hook {
+	display: none;
 	position: fixed;
 	box-sizing: 30px;
 	top: 20px;
@@ -158,6 +134,25 @@ form button:hover {
 	opacity: 0.6;
 	z-index: 2;
 	transition: 300ms ease;
+}
+
+#myname p{
+	opacity: 1;
+	font-family: futura, sans-serif;
+	text-transform: uppercase;
+	color: #eee;
+	letter-spacing: 0.3em;
+	margin-bottom: 3px;
+}
+
+#myoc p{
+	opacity: 1;
+	font-family: futura, sans-serif;
+	font-size: 10px;
+	letter-spacing: 0.3em;
+	color: #eee;
+	text-transform: uppercase;
+	margin-bottom: 50px;
 }
 
 .hook:hover {
@@ -183,40 +178,12 @@ form button:hover {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	left: -175px;
+	left: 10px;
 	padding-left: 25px;
-	width: 150px;
+	width: 175px;
 	background-color: #222222;
 	z-index: 2;
 	transition: 300ms ease;
-}
-
-#toggler {
-	display: none;
-}
-
-#toggler:checked + .whole .menu {
-	left: 0px;
-}
-
-#toggler:checked + .whole .hook {
-	left: 200px;
-}
-
-#toggler:checked + .whole .content {
-	padding-left: 175px;
-}
-
-#toggler:checked + .whole .footer {
-	padding-left: 175px;
-}
-
-#toggler:checked + .whole .logo #title {
-	margin-left: -50px;
-}
-
-#toggler:checked + .whole .logo #kicker {
-	margin-left: -50px;
 }
 
 .menu ul {
@@ -251,4 +218,64 @@ form button:hover {
 
 .menu ul li a:link {
 	text-decoration: none;
+}
+
+@media screen and (max-width: 736px) {
+	.menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-left: 25px;
+	height: 140px;
+	width: 100%;
+	background-color: #222222;
+	z-index: 4;
+	transition: 300ms ease;
+	}
+
+	.whole {
+		margin-top: 150px;
+	}
+
+	.hook {
+	top: 150px;
+	left: 20px;
+	}
+
+	.footer {
+	margin-top: 175px;
+	left: 50%;
+	margin-left: -200px;
+	}
+
+	#myname p{
+	opacity: 1;
+	font-family: futura, sans-serif;
+	text-transform: uppercase;
+	color: #eee;
+	letter-spacing: 0.3em;
+	margin-bottom: 3px;
+	}
+
+	#myoc p{
+	opacity: 1;
+	font-family: futura, sans-serif;
+	font-size: 10px;
+	letter-spacing: 0.3em;
+	color: #eee;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	}
+
+	.menu ul {
+	margin-top: 0;
+	}
+
+	.menu ul li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 25px;
+	}
 }
