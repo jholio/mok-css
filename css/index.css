@@ -306,4 +306,8 @@ h2 {
 	list-style-type: none;
 	padding-right: 25px;
 }
+
+	.content {
+		width: 500px;
+	}
 }
