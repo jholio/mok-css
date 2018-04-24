@@ -126,11 +126,11 @@ body {
 	} 
 
 	#me {
-	width: 1010px;
+	width: 500px;
 }
 
 	#text {
-	width: 1010px;
+	width: 500px;
 	}
 
 }
@@ -269,6 +269,8 @@ body {
 	z-index: 4;
 	transition: 300ms ease;
 	}
+
+
 
 	.whole {
 		margin-top: 150px;

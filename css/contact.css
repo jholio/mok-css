@@ -41,12 +41,6 @@ body {
 	transition: 300ms ease;
 }
 
-form {
-	display: grid;
- 	grid-template-columns: 1fr 200px 400px 1fr;	
- 	grid-gap: 10px;
-} 
-
 #zero {
 	font-family: futura, sans-serif;
 	text-transform: uppercase;
@@ -58,15 +52,6 @@ form {
 	letter-spacing: 5px;
 	text-align: center;
 	grid-column: 1 / 5;
-}
-
-label {
-	grid-column: 2 / 3;
-}
-
-input,
-button {
-	grid-column: 3 / 4;
 }
 
 form button {
@@ -82,14 +67,6 @@ form button:hover {
 }
 
 @media screen and (max-width: 736px) {
-	form {
-	display: grid;
-	margin: 0;
-	padding: 0;
- 	grid-template-columns: 1fr 200px 200px 1fr;	
- 	grid-gap: 10px;
-	} 
-
 	.content {
 	margin-top: -10px;
 	padding-top: 0; 
